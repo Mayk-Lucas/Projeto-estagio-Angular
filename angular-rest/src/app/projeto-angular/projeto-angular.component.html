@@ -1,0 +1,50 @@
+<!--form class="form-control">
+  <div class="form-group has-success">
+    <label for="curso">Curso</label>
+    <input type="text" class="form-control" id="nome" placeholder="Java"
+       [(ngModel)]="curso" name="nome" aria-describedby="helpBlock2">
+  </div>
+
+  <div class="form-group">
+    <label for="duracao">Duração do Curso</label>
+    <input type="text" class="form-control" id="duracao" placeholder="00hs"
+       [(ngModel)]="duracao" name="duracao"/>
+  </div>
+
+  <button type="submit" class="btn btn-danger" (click)=" metodoAdicionar()"
+  (click)="metodoAdicionar(nome.value, duracao.value)>
+    Cadastra
+  </button>
+</form>
+<br-->
+<form [formGroup]="limparInput">
+<fieldset>
+  <p-growl [(value)]="mensagem"></p-growl>
+    
+  <legend><button pButton type="button" label="Cadastrar Curso"  
+    class="ui-button-primary" (click)="mensagemUp()"></button></legend>
+  <h3>Curso:</h3>
+  <span class="ui-float-label">
+    <input id="float-input" type="text" size="30" pInputText 
+    formControlName="nome" #nome pTooltip="*Campo Obrigatorio" tooltipPosition="top"> 
+    <label for="float-input">Java</label>
+  </span>
+  <h3>Duração:</h3>
+  <span class="ui-float-label">
+    <input id="float-input" type="text" size="30" pInputText
+    formControlName="duracao" #duracao pTooltip="*Campo Obrigatorio" tooltipPosition="top"> 
+    <label for="float-input">00hs</label>
+  </span>
+  <br>
+  <div id="buton">
+  <button pButton type="button" (click)="metodoAdicionar(nome.value, duracao.value)" 
+  label="Cadastrar" class="ui-button-primary">
+  </button>
+  <button pButton type="button" (click)="metodoLimpar()" label="Limpar"  
+  class="ui-button-primary">
+  </button>
+  </div>
+</fieldset>
+</form>
+
+  
